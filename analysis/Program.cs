@@ -31,8 +31,7 @@ namespace analysis
             createProcID.ExecuteNonQuery();
 
             //open file
-            string dir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            using (var hs = new StreamReader(dir + @"/HS.txt"))
+            using (var hs = new StreamReader(Path.GetFullPath( "HS.txt")))
             {
                 string line;
                 string[] tab = new string[] { "\t" };
@@ -55,7 +54,7 @@ namespace analysis
                     }
                 }
             }
-            using (var pathways = new StreamReader(dir + @"/pathways.txt"))
+            using (var pathways = new StreamReader(Path.GetFullPath("pathways.txt")))
             {
                 string line;
                 string[] tab = new string[] { "\t" };
