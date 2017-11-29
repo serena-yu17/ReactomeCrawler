@@ -30,9 +30,9 @@ namespace analysis
             createProcID.CommandText = funcinsID;
             createProcID.ExecuteNonQuery();
 
-
             //open file
-            using (var hs = new System.IO.StreamReader(@"C:\OneDrive\projects\Web\GeneAnalysis\HS.txt"))
+            string dir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            using (var hs = new StreamReader(dir + @"/HS.txt"))
             {
                 string line;
                 string[] tab = new string[] { "\t" };
@@ -55,7 +55,7 @@ namespace analysis
                     }
                 }
             }
-            using (var pathways = new System.IO.StreamReader(@"C:\OneDrive\projects\Web\GeneAnalysis\pathways.txt"))
+            using (var pathways = new StreamReader(dir + @"/pathways.txt"))
             {
                 string line;
                 string[] tab = new string[] { "\t" };
