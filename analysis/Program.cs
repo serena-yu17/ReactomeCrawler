@@ -112,6 +112,8 @@ namespace analysis
                 }
             }
             con.Close();
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
         }
 
         static string FindGeneSymbol(uint id)
